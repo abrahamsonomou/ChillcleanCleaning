@@ -1,0 +1,79 @@
+		{% load static %}
+        <!-- Team -->
+		<section class="padding ptb-xs-40">
+			<div class="container">
+				<div class="row text-center mb-40 mb-xs-30">
+					<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+						<div class="section-title_home">
+							<h2>Our Team</h2>
+							<span class="b-line"></span>
+							<p>
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					{% for team in teams %}
+					<div class="col-lg-3 col-md-6">
+						<div class="team_box img-scale">
+							<div class="team_picher">
+								<figure>
+									{% if team.photo %}
+									<img src="{{team.photo.url}}" alt="">
+									{% else %}
+									<img src="{% static 'assets-web/images/team/team1.jpg' %} " alt="">
+									{% endif %}
+								</figure>
+							</div>
+							<div class="team_detail">
+								<h3>{{team.nom}}</h3>
+								<span>{{team.specialite}}</span>
+							</div>
+							<div class="team_text">
+								<p>
+									{{team.detail}}
+								</p>
+							</div>
+							<div class="social_team">
+								<ul>
+									<li>
+										{% if team.facebook %}
+										<a href="{{team.facebook}}"><i class="fa fa-facebook"></i></a>
+										{% else %}
+										<a href="javascript:avoid(0);"><i class="fa fa-facebook"></i></a>
+										{% endif %}
+									</li>
+									<li>
+										{% if team.twitter %}
+										<a href="{{team.twitter}}"><i class="fa fa-twitter"></i></a>
+										{% else %}
+										<a href="javascript:avoid(0);"><i class="fa fa-twitter"></i></a>
+										{% endif %}
+									</li>
+									<li>
+										{% if team.linkedin %}
+										<a href="{{team.linkedin}}"><i class="fa fa-linkedin"></i></a>
+										{% else %}
+										<a href="javascript:avoid(0);"><i class="fa fa-linkedin"></i></a>
+										{% endif %}
+									</li>
+									<li>
+										{% if team.youtube %}
+										<a href="{{team.youtube}}"><i class="fa fa-youtube"></i></a>
+										{% else %}
+										<a href="javascript:avoid(0);"><i class="fa fa-youtube"></i></a>
+										{% endif %}
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+
+				</div>
+
+			</div>
+		</section>
+		<!-- Team_End -->

@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	
+
+<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+		{% block title %}
+		{% endblock title %}
+		</title>
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets-chillclean/favicon.ico' %} ">
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+		<link href="{% static 'assets-chillclean/css/bootstrap.min.css' %} " rel="stylesheet" type="text/css">
+		<link href="{% static 'assets-chillclean/css/font-awesome.css' %} " rel="stylesheet" type="text/css">
+		<link href="{% static 'assets-chillclean/css/ionicons.css' %} " rel="stylesheet" type="text/css">
+		<link href="{% static 'assets-chillclean/css/jquery.fancybox.css' %} " rel="stylesheet" type="text/css">
+		<!--Main Slider-->
+		<link href="{% static 'assets-chillclean/css/settings.css' %} " type="text/css" rel="stylesheet" media="screen">
+		<link href="{% static 'assets-chillclean/css/layers.css' %} " type="text/css" rel="stylesheet" media="screen">
+		<link href="{% static 'assets-chillclean/css/layers.css' %} " type="text/css" rel="stylesheet" media="screen">
+		<link href="{% static 'assets-chillclean/css/owl.carousel.css' %} " type="text/css" rel="stylesheet" media="screen">
+		<link href="{% static 'assets-chillclean/css/style.css' %} " rel="stylesheet">
+		<link href="{% static 'assets-chillclean/css/header.css' %} " rel="stylesheet" type="text/css" />
+		<link href="{% static 'assets-chillclean/css/footer.css' %} " rel="stylesheet" type="text/css" />
+		<link href="{% static 'assets-chillclean/css/index.css' %} " rel="stylesheet" type="text/css" />
+		<link href="{% static 'assets-chillclean/css/theme-color/default.css' %} " rel="stylesheet" type="text/css" id="theme-color" />
+	</head>
+   
+	<body>
+		<!--loader-->
+		<div id="preloader">
+			<div class="sk-circle">
+				<div class="sk-circle1 sk-child"></div>
+				<div class="sk-circle2 sk-child"></div>
+				<div class="sk-circle3 sk-child"></div>
+				<div class="sk-circle4 sk-child"></div>
+				<div class="sk-circle5 sk-child"></div>
+				<div class="sk-circle6 sk-child"></div>
+				<div class="sk-circle7 sk-child"></div>
+				<div class="sk-circle8 sk-child"></div>
+				<div class="sk-circle9 sk-child"></div>
+				<div class="sk-circle10 sk-child"></div>
+				<div class="sk-circle11 sk-child"></div>
+				<div class="sk-circle12 sk-child"></div>
+			</div>
+		</div>
+
+		<!--loader-->
+
+		{% include 'includes/_header.html' %}
+		<!-- END HEADER -->
+        
+        {% block content %}
+	
+        {% endblock content %}
+
+		{% include 'includes/_footer.html' %}
+
+
+		<!-- Site Wraper End -->
+		<script type="text/javascript" src="{% static 'assets-chillclean/js/jquery.min.js' %} "></script>
+		<script type="text/javascript" src="{% static 'assets-chillclean/js/tether.min.js' %} "></script>
+		<script type="text/javascript" src="{% static 'assets-chillclean/js/bootstrap.min.js' %} "></script>
+		<script src="{% static 'assets-chillclean/js/jquery.easing.js' %} " type="text/javascript"></script>
+
+		<!-- fancybox Js -->
+		<script src="{% static 'assets-chillclean/js/jquery.mousewheel-3.0.6.pack.js' %} " type="text/javascript"></script>
+		<script src="{% static 'assets-chillclean/js/jquery.fancybox.pack.js' %} " type="text/javascript"></script>
+		<!-- carousel Js -->
+		<script src="{% static 'assets-chillclean/js/owl.carousel.js' %} " type="text/javascript"></script>
+
+		<!-- imagesloaded Js -->
+		<script src="{% static 'assets-chillclean/js/imagesloaded.pkgd.min.js' %} " type="text/javascript"></script>
+		<!-- masonry,isotope Effect Js -->
+		<script src="{% static 'assets-chillclean/js/imagesloaded.pkgd.min.js' %} " type="text/javascript"></script>
+		<script src="{% static 'assets-chillclean/js/isotope.pkgd.min.js' %} " type="text/javascript"></script>
+		<script src="{% static 'assets-chillclean/js/masonry.pkgd.min.js' %} " type="text/javascript"></script>
+		<script src="{% static 'assets-chillclean/js/jquery.appear.js' %} " type="text/javascript"></script>
+		<!-- Mail Function Js -->
+		<!-- <script src="{% static 'assets-chillclean/js/mail.js' %} " type="text/javascript"></script> -->
+
+		<!--prettyPhotoprettyPhoto-->
+		<script type="text/javascript" src="{% static 'assets-chillclean/js/jquery.prettyPhoto.js' %} "></script>
+		<!-- Fun Factor / Counter -->
+		<script type="text/javascript" src="{% static 'assets-chillclean/js/jquery.elevateZoom-3.0.8.min.js' %} "></script>
+		<!-- Price Filter -->
+		<script type="text/javascript" src="{% static 'assets-chillclean/js/price-filter.js' %} "></script>
+
+		<!-- revolution Js -->
+		<script type="text/javascript" src="{% static 'assets-chillclean/js/jquery.themepunch.tools.min.js' %} "></script>
+		<script type="text/javascript" src="{% static 'assets-chillclean/js/jquery.themepunch.revolution.min.js' %} "></script>
+		<script type="text/javascript" src="{% static 'assets-chillclean/extensions/revolution.extension.slideanims.min.js' %} "></script>
+		<script type="text/javascript" src="{% static 'assets-chillclean/extensions/revolution.extension.layeranimation.min.js' %} "></script>
+		<script type="text/javascript" src="{% static 'assets-chillclean/extensions/revolution.extension.navigation.min.js' %} "></script>
+		<script type="text/javascript" src="{% static 'assets-chillclean/extensions/revolution.extension.parallax.min.js' %} "></script>
+		<script type="text/javascript" src="{% static 'assets-chillclean/js/jquery.revolution.js' %} "></script>
+		<!-- custom Js -->
+		<script src="{% static 'assets-chillclean/js/custom.js' %} " type="text/javascript"></script>
+
+	</body>
+
+
+</html>
+

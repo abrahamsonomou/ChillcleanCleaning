@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default navbar-sticky bootsnav">
+    <div class="container">
+        <!-- Start Header Navigation -->
+
+        <!-- End Header Navigation -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav mobile-menu d-flex justify-content-between">
+                <li>
+                    <a href="{% url 'index' %} ">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}">About us</a>
+                </li>
+                <li>
+                    <a href="{% url 'services' %}">Services</a>
+                </li>
+                <li>
+                    <a href="{% url 'projet' %}">Project</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'blog' %}">blog</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'team' %}">Team</a>
+                </li>
+                <li>
+                    <a href="{% url 'shop' %}">Shop</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}">Contact us</a>
+                </li>
+            </ul>
+        </div>
+        <!--navbar-collapse -->
+    </div>
+</nav>

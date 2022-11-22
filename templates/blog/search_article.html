@@ -1,0 +1,124 @@
+{% extends 'includes/_baseClient.html' %}
+{% load static %}
+{% block title %}Blog | Chillclean-Cleaning-Services{% endblock title %}
+{% block content %}
+  <!-- Intro Section -->
+  <section class="inner-intro bg-img light-color overlay-before parallax-background">
+    <div class="container">
+        <div class="row title">
+            <div class="title_row">
+                <h1 data-title="Blog"><span>Blog</span></h1>
+                <div class="page-breadcrumb">
+                    <a>Home</a>/ <span>Blog</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Intro Section --> 
+<!-- Blog Post Section -->
+<!-- cette condition permet de verifier s'il ya des articles avant d'afficher le bloc -->
+
+
+<section class="padding ptb-xs-40">
+<div class="container">
+<div class="row"> 
+<!-- Post Item -->
+<div class="col-lg-9">
+  <div class="row">
+    <div class="col-md-12 blog-post-hr">
+      <div class="section-title">
+        {% if articles %}
+        <h1>Resultat de la recherche</h1>
+        <br>
+        <hr>
+        {% endif %}
+      </div>
+      <!-- cette boucle for permet de parcourir la liste des articles -->
+      {% if articles %}
+
+      {% for article in articles %}
+
+      <div class="blog-post mb-30">
+        <div class="post-media"> <img src="{{article.image.url}}" alt="{{article.titre|truncatechars:30}}" /><span class="event-calender blog-date">{{article.updated|slice:2}}</span> </div>
+        <div class="post-meta"> <span>by <a href="javascript:avoid(0);">{{article.auteur|upper}}</a>, il y a {{article.updated|timesince|truncatechars:30|lower}}</span><span> <a href="javascript:avoid(0);"><i class="fa fa-comment-o"></i> 25</a>,</span><span> <a href="javascript:avoid(0);"><i class="fa fa-heart-o"></i> 57</a>,</span>
+          <div class="post-more-link pull-right">
+            <div class="icons-hover-black"> <a href="#" class="facebook-icon"> <i class="fa fa-facebook"></i> </a><a href="#" class="twitter-icon"> <i class="fa fa-twitter"></i> </a><a href="#" class="googleplus-icon"> <i class="fa fa-google-plus"></i> </a><a href="#" class="linkedin-icon"> <i class="fa fa-linkedin"></i> </a> </div>
+            <a class="btn-text xs-hidden"> <i class="ion-android-share-alt"></i></a> </div>
+        </div>
+        <div class="post-header">
+          <h2><a href="{% url 'detail_article' article.pk %}">{{article.titre|truncatechars:30}}</a></h2>
+        </div>
+        <div class="post-entry">
+          <p>{{article.resume|truncatechars:200}}</p>
+        </div>
+        <div class="post-more-link pull-left"> <a href="{% url 'detail_article' article.pk %}" class="btn-text">Lire plus</a> </div>
+      </div>
+    
+      <hr />
+      {% endfor %}
+      {% else %}
+      <div class="col-lg-12 col-md-12">
+         <article class="single_blog mb-60">
+            <h1 class="text-center">Aucun resultat trouvé !</h1>
+         </article>
+     </div>
+      {% endif %}
+    </div>
+  </div>
+  <!-- insertion de la pagination -->
+  {% if articles|length %}
+  <!-- Pagination -->
+  {% include "includes/_pagination.html" with page=articles %}
+
+  {% endif %}
+</div>
+<!-- End Post Item --> 
+<!-- Sidebar -->
+<div class="col-lg-3 mt-sm-30 mt-xs-30">
+  {% comment %} inclusion de la recherche {% endcomment %}
+  {% include 'includes/_rechercheArticle.html' %}
+
+  {% include 'includes/_CategorieArticle.html' %}
+  
+  <div class="sidebar-widget">
+    <h4>Recent Post</h4>
+    
+    <ul class="widget-post pt-15">
+      
+      {% for article in recent_articles %}
+        <li> <a class="widget-post-media"> <img src="{{article.image.url}}" alt="{{article.titre|truncatechars:30}}"> </a>
+          <div class="widget-post-info">
+            <h6><a href="{% url 'detail_article' article.pk %}">{{article.titre|truncatechars:10}}</a></h6>
+            <div class="post-meta"><span>{{article.updated|timesince|truncatechars:15}}</span></div>
+          </div>
+        </li>
+      {% endfor %}
+    
+    </ul>
+  </div>
+  <div class="sidebar-widget mb-0">
+    <h4>popular Tags</h4>
+    
+    <ul class="widget-tag pt-15">
+      <li> <a>Art</a> </li>
+      <li> <a>Business</a> </li>
+      <li> <a>Design</a> </li>
+      <li> <a>Graphic</a> </li>
+      <li> <a>fashion</a> </li>
+      <li> <a>Model</a> </li>
+      <li> <a>Photography</a> </li>
+    </ul>
+  </div>
+</div>
+<!-- End Sidebar --> 
+</div>
+</div>
+
+</section>
+<!-- End Blog Post Section --> 
+<!-- fin de la condition liee a l'affichage du bloc -->
+
+{% endblock content %}

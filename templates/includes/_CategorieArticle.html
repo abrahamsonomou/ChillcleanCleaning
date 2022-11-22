@@ -1,0 +1,9 @@
+<div class="sidebar-widget">
+    <h4>Categories</h4>
+    
+    <ul class="categories">
+        {% for categorie in categories %}
+      <li><a href="{% url 'selection_article_categorie' categorie.pk %}">{{categorie.nom_categorie}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>

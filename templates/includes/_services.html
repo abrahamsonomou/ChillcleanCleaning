@@ -1,0 +1,43 @@
+		{% load static %}
+        <!-- Service_Section -->
+		<section class="padding ptb-xs-40 gray-bg service_sec">
+			<div class="container">
+				<div class="row text-center mb-xs-30">
+					<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+						<div class="section-title_home">
+							<h2>Quality Services</h2>
+							<span class="b-line"></span>
+							<p>
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<div class="col-md-12">
+						<div class="service_slider_home next_btn_style">
+							{% for service in services %}
+							<div class="service_box">
+								<figure>
+									{% if service.image %}
+									<img src="{{service.image.url}}" alt="{{service.titre|truncatechars:2}}"/>
+									{% else %}
+									<img src="{% static 'assets-web/images/service/img_1.jpg' %} " alt="{{service.titre}}" />
+									{% endif %}
+								</figure>
+								<h3><a href="javascript:avoid(0);">{{service.titre}}</a></h3>
+								<p>
+									{{service.description|truncatechars:100}}
+								</p>
+							</div>
+						{% endfor %}
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+		<!-- Service_Section_End -->

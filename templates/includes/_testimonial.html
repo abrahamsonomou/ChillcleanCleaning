@@ -1,0 +1,39 @@
+{% load static %}
+		<!-- testimonial_Section -->
+		<section class="padding ptb-xs-40 bg_Testimonial">
+			<div class="container">
+				<div class="row text-center light-color mb-40 mb-xs-30">
+					<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+						<div class="section-title_home">
+							<h2>Our Testimonial</h2>
+							<span class="b-line"></span>
+							<p>
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="home_testimonial">
+
+					{% for temoignage in temoignages %}
+					<div class="testimonial_blog">
+
+						<div class="author_detail">
+							<div class="author_pic">
+								{% if temoignage.photo.url %}
+								<img src="{{temoignage.photo.url}} " alt="{{temoignage.nom}}" />
+								{% else %}
+								<img src="{% static 'assets-web/images/testimonial/1.jpg' %} " alt="" />
+								{% endif %}
+							</div>
+							<h3>{{temoignage.nom}}</h3>
+							<p>
+								{{temoignage.contenu}}
+							</p>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+		<!-- testimonial_Section_End -->

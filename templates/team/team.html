@@ -1,0 +1,112 @@
+{% extends 'includes/_baseClient.html' %}
+{% load static %}
+{% block title %}Team | Chillclean-Cleaning-Services{% endblock title %}
+{% block content %}
+		<!-- Intro Section -->
+		<section class="inner-intro bg-img light-color overlay-before parallax-background">
+			<div class="container">
+				<div class="row title">
+					<div class="title_row">
+						<h1 data-title="Team"><span>Team</span></h1>
+						<div class="page-breadcrumb">
+							<a>Home</a>/ <span>Team</span>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- End Intro Section -->
+		<div class="padding ptb-xs-40">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<!--Team Section-->
+						<section id="team" class="team-section">
+
+							<div class="container">
+								<div class="row text-center pb-30">
+									<div class="col-sm-12">
+										<div class="heading-box ">
+											<h2><span>Our</span> Team</h2>
+											<span class="b-line"></span>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="  team-pagination owl-carousel" data-pagination="false" data-items="3"  data-loop="true" data-margin="10" data-center="true" data-navigation="true" data-desktop="3" data-desktopsmall="3" data-tablet="2" data-mobile="1" data-autoplay="true" data-autotime="2000" data-autoplayHoverPause="true" data-prev="ion-ios-arrow-back" data-next="ion-ios-arrow-forward">
+
+											{% for team in teams %}
+											<!--Team Member-->
+											<div class="team-member col-md-4 col-sm-6 col-xs-12">
+												<div class="inner-box">
+													<div class="image-box">
+														{% if team.photo %}
+														<img src="{{team.photo.url}}" alt="">
+														{% else %}
+														<img src="{% static 'assets-web/images/team/team1.jpg' %} " alt="">
+														{% endif %}
+														<!--Overlay Box-->
+														<div class="overlay-box">
+															<!--User Info-->
+															<div class="user-info">
+																<div class="text">
+																	{{team.fonction}}
+																</div>
+																<h4>{{team.nom}}</h4>
+															</div>
+															<!--Social Icon Two-->
+															<ul class="social-icon-two">
+																	<li>
+																		{% if team.facebook %}
+																		<a href="{{team.facebook}}"><i class="fa fa-facebook"></i></a>
+																		{% else %}
+																		<a href="javascript:avoid(0);"><i class="fa fa-facebook"></i></a>
+																		{% endif %}
+																	</li>
+																	<li>
+																		{% if team.twitter %}
+																		<a href="{{team.twitter}}"><i class="fa fa-twitter"></i></a>
+																		{% else %}
+																		<a href="javascript:avoid(0);"><i class="fa fa-twitter"></i></a>
+																		{% endif %}
+																	</li>
+																	<li>
+																		{% if team.linkedin %}
+																		<a href="{{team.linkedin}}"><i class="fa fa-linkedin"></i></a>
+																		{% else %}
+																		<a href="javascript:avoid(0);"><i class="fa fa-linkedin"></i></a>
+																		{% endif %}
+																	</li>
+																	{% comment %} <li>
+																		{% if team.youtube %}
+																		<a href="{{team.youtube}}"><i class="fa fa-youtube"></i></a>
+																		{% else %}
+																		<a href="javascript:avoid(0);"><i class="fa fa-youtube"></i></a>
+																		{% endif %}
+																	</li> {% endcomment %}
+																</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+											{% endfor %}
+										
+										</div>
+									</div>
+								</div>
+
+							
+							</div>
+
+						</section>
+						<!--Team Section End-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--End Contact-->
+
+{% endblock content %}

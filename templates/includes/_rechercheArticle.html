@@ -1,0 +1,10 @@
+<div class="sidebar-widget">
+    <h4>Search</h4>
+    <div class="widget-search pt-15">
+        <form action="{% url 'search_article' %}">
+            {% csrf_token %}
+            <input placeholder="Search..." class="form-full input-lg" type="text" name="article" id="wid-search">
+            <input type="submit" value="" name="email" id="wid-s-sub">
+        </form>  
+    </div>
+  </div>

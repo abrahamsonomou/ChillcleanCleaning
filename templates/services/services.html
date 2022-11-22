@@ -1,0 +1,54 @@
+{% extends 'includes/_baseClient.html' %}
+{% load static %}
+{% block title %}Services | Chillclean-Cleaning-Services{% endblock title %}
+{% block content %}
+		<!-- Intro Section -->
+		<section class="inner-intro bg-img light-color overlay-before parallax-background">
+			<div class="container">
+				<div class="row title">
+					<div class="title_row">
+						<h1 data-title="Service"><span>Services</span></h1>
+						<div class="page-breadcrumb">
+							<a>Home</a>/ <span>Services</span>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- Intro Section -->
+		<!-- Service Section -->
+
+		<section class="padding ptb-xs-40">
+			<div class="container">
+				<div class="row pb-30 text-center">
+					<div class="col-md-12">
+						<div class="section-title_home">
+							<h2>Nos <span>Services</span></h2>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					{% for service in services %}
+					<div class="col-md-6 col-lg-4 mb-30">
+						<div class="service_box">
+							<figure>
+								{% if service.image %}
+								<img src="{{service.image.url}}" alt="{{service.titre|truncatechars:2}}"/>
+								{% else %}
+								<img src="{% static 'assets-web/images/service/img_1.jpg' %} " alt="{{service.titre}}" />
+								{% endif %}
+							</figure>
+							<h3><a href="{% url 'detail_service' service.pk %}">{{service.titre}}</a></h3>
+							<p>{{service.description}}</p>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+
+			</div>
+		</section>
+		<!-- Service Section end -->
+{% endblock content %}
